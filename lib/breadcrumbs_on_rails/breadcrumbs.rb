@@ -76,7 +76,7 @@ module BreadcrumbsOnRails
     #
     # The SimpleBuilder accepts a limited set of options.
     # If you need more flexibility, create a custom Builder and
-    # pass the option :builder => BuilderClass to the <tt>render_breadcrumbs</tt> helper method.
+    # pass the option :builder => BuilderClass to the <tt>render_crumbs</tt> helper method.
     #
     class SimpleBuilder < Builder
 

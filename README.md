@@ -54,7 +54,7 @@ The third, optional argument is a Hash of options to customize the breadcrumb li
       end
     end
 
-In your view, you can render the breadcrumb menu with the `render_breadcrumbs` helper.
+In your view, you can render the breadcrumb menu with the `render_crumbs` helper.
 
     <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -65,14 +65,14 @@ In your view, you can render the breadcrumb menu with the `render_breadcrumbs` h
     </head>
     
     <body>
-      <%= render_breadcrumbs %>
+      <%= render_crumbs %>
     </body>
     </html>
 
-`render_breadcrumbs` understands a limited set of options. For example, you can pass change the default separator with the `:separator` option.
+`render_crumbs` understands a limited set of options. For example, you can pass change the default separator with the `:separator` option.
 
     <body>
-      <%= render_breadcrumbs :separator => ' / ' %>
+      <%= render_crumbs :separator => ' / ' %>
     </body>
 
 More complex customizations require a custom Builder.
