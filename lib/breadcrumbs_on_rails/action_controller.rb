@@ -14,12 +14,12 @@ module BreadcrumbsOnRails
     included do
       extend          ClassMethods
       helper          HelperMethods
-      helper_method   :add_crumbs, :breadcrumbs
+      helper_method   :add_crumb, :breadcrumbs
     end
 
     protected
 
-    def add_crumbs(name, path, options = {})
+    def add_crumb(name, path, options = {})
       self.breadcrumbs << Breadcrumbs::Element.new(name, path, options)
     end
 
@@ -60,7 +60,7 @@ module BreadcrumbsOnRails
 
     module ClassMethods
 
-      def add_crumbs(name, path, filter_options = {})
+      def add_crumb(name, path, filter_options = {})
         # This isn't really nice here
         if eval = Utils.convert_to_set_of_strings(filter_options.delete(:eval), %w(name path))
           name = Utils.instance_proc(name) if eval.include?("name")
@@ -68,7 +68,7 @@ module BreadcrumbsOnRails
         end
 
         before_filter(filter_options) do |controller|
-          controller.send(:add_crumbs, name, path)
+          controller.send(:add_crumb, name, path)
         end
       end
 

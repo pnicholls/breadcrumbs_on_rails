@@ -31,17 +31,17 @@ Use [Bundler](http://gembundler.com) and the [:git option](http://gembundler.com
 
 Creating a breadcrumb navigation menu in your Rails app using *BreadcrumbsOnRails* is really straightforward.
 
-In your controller, call `add_crumbs` to push a new element on the breadcrumb stack. `add_crumbs` requires two arguments: the name of the breadcrumb and the target path.
+In your controller, call `add_crumb` to push a new element on the breadcrumb stack. `add_crumb` requires two arguments: the name of the breadcrumb and the target path.
 
     class MyController
     
-      add_crumbs "home", :root_path
-      add_crumbs "my", :my_path
+      add_crumb "home", :root_path
+      add_crumb "my", :my_path
       
       def index
         # ...
         
-        add_crumbs "index", index_path
+        add_crumb "index", index_path
       end
     
     end
@@ -50,7 +50,7 @@ The third, optional argument is a Hash of options to customize the breadcrumb li
 
     class MyController
       def index
-        add_crumbs "index", index_path, :title => "Back to the Index"
+        add_crumb "index", index_path, :title => "Back to the Index"
       end
     end
 
